@@ -1,0 +1,53 @@
+{
+  "name": "dsh-plugin-k8s-sdk",
+  "version": "0.1.0",
+  "description": "DSH (DeepSeek Harness) Kubernetes SDK plugin: list nodes, list pods and read pod logs via @kubernetes/client-node, no kubectl binary required.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "prepublishOnly": "npm run build",
+    "self-test": "node dist/self-test.js"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/dsh": ">=1.0.0"
+  },
+  "peerDependenciesMeta": {
+    "@deepseek-ai/dsh": {
+      "optional": true
+    }
+  },
+  "dependencies": {
+    "@kubernetes/client-node": "^0.21.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.0",
+    "typescript": "^5.5.0"
+  },
+  "keywords": [
+    "dsh-plugin",
+    "deepseek-harness",
+    "cordis",
+    "kubernetes",
+    "k8s",
+    "sdk",
+    "cloud-native"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "files": [
+    "dist",
+    "cordis.patch.yml",
+    "README.md",
+    "使用手册.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

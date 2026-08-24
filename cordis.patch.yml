@@ -1,0 +1,6 @@
+name: dsh-plugin-k8s-sdk
+description: DSH Kubernetes SDK plugin, based on @kubernetes/client-node
+version: 0.1.0
+main: dist/index.js
+type: bundle
+bundle: true
